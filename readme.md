@@ -12,7 +12,7 @@ Collection file Petstore_E2E_Testing_postman_collection.json downloaded
 Before running the collection, create a Postman Environment with the following variables:
 
 | Variable | Value | Description |
------------------------------------------------------------------------------------------------------
+|---|---|---|
 | baseUrl | https://petstore.swagger.io/v2 | Base url for the Petstore API |
 | api_key | special-key | API key for authenticated endpoints |
 
