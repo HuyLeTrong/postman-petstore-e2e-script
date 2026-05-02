@@ -1,19 +1,19 @@
-Petstore E2E Testing - Postman Collection
+###Petstore E2E Testing - Postman Collection
 
 This is a complete end-to-end API test suit for the Swagger Petstore API, covering authentication, negative testing, and session log out using Postman.
 
 ## Prerequisites
 
-### Postman installed
-### Collection file Petstore_E2E_Testing_postman_collection.json downloaded
+Postman installed
+Collection file Petstore_E2E_Testing_postman_collection.json downloaded
 
 ## Environment Setup
 
 Before running the collection, create a Postman Environment with the following variables:
-### Variable	Value					Description
+Variable|Value|Description
 -----------------------------------------------------------------------------------------------------
-### baseUrl 	https://petstore.swagger.io/v2		Base url for the Petstore API
-### api_key 	special-key				API key for authenticated endpoints
+baseUrl|https://petstore.swagger.io/v2|Base url for the Petstore API
+api_key|special-key|API key for authenticated endpoints
 
 
 ## How to Set Up the Environment in Postman
