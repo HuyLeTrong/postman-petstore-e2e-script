@@ -1,4 +1,4 @@
-###Petstore E2E Testing - Postman Collection
+### Petstore E2E Testing - Postman Collection
 
 This is a complete end-to-end API test suit for the Swagger Petstore API, covering authentication, negative testing, and session log out using Postman.
 
