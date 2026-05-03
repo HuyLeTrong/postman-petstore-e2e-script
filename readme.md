@@ -4,8 +4,8 @@ This is a complete end-to-end API test suite for the Swagger Petstore API, cover
 
 ## Prerequisites
 
--Postman installed
--Collection file Petstore_E2E_Testing_postman_collection.json downloaded
+1. Postman installed
+2. Collection file Petstore_E2E_Testing_postman_collection.json downloaded
 
 ## Environment Setup
 
