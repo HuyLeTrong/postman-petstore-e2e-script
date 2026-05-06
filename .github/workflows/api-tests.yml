@@ -28,7 +28,8 @@ jobs:
           newman run Petstore_E2E_Testing.postman_collection.json \
             --env-var "baseUrl=https://petstore.swagger.io/v2" \
             --env-var "api_key=special-key" \
-            --reporters cli
+            --reporters cli,htmlextra \
+            --reporter-htmlextra-export newman/report.html
 
       - name: Upload Newman Results
         if: always()
