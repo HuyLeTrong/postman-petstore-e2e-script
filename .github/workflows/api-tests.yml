@@ -18,14 +18,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install Newman
         run: npm install -g newman
 
       - name: Run Postman Collection
         run: |
-          newman run Petstore_E2E_Testing_postman_collection.json \
+          newman run Petstore_E2E_Testing.postman_collection.json \
             --env-var "baseUrl=https://petstore.swagger.io/v2" \
             --env-var "api_key=special-key" \
             --reporters cli
