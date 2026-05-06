@@ -1,3 +1,5 @@
+![API Tests](https://github.com/HuyLeTrong/postman-petstore-e2e-script/actions/workflows/api-tests.yml/badge.svg)
+
 ### Petstore E2E Testing - Postman Collection
 
 This is a complete end-to-end API test suite for the Swagger Petstore API, covering authentication, negative testing, and session log out using Postman.
