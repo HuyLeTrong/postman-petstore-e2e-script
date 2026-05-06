@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+    - cron: '0 10 * * *' # Runs daily at 10:00 UTC or 5:00 PM Vietnam Time
+  workflow_dispatch:
 
 jobs:
   api-tests:
