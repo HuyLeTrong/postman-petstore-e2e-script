@@ -56,10 +56,10 @@ All 20 tests should pass with 0 failures when the environment is configured corr
 ## Test Results
 
 ### Steps 1-3
-![Steps 1-3](screenshots/run-results-1.png)
+![Steps 1-3](screenshots/run-result-1.png)
 
 ### Steps 4-5
-![Steps 4-5](screenshots/run-results-2.png)
+![Steps 4-5](screenshots/run-result-2.png)
 
 ### Steps 6-8
-![Steps 6-8](screenshots/run-results-3.png)
+![Steps 6-8](screenshots/run-result-3.png)
