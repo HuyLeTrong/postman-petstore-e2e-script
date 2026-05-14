@@ -21,6 +21,17 @@
               "pm.test(\"Response contains session token\", () => {\r",
               "    const json = pm.response.json();\r",
               "    pm.expect(json.message).to.include(\"logged in user session:\");\r",
+              "});\r",
+              "\r",
+              "const session = pm.response.json();\r",
+              "let session_id = session.message.split(':')[1].trim()\r",
+              "console.log(session_id)\r",
+              "pm.environment.set(\"session_id\", session_id)\r",
+              "\r",
+              "//check if session_id has been set\r",
+              "pm.test(\"Session ID has been set\", () => {\r",
+              "    const session_id = pm.environment.get(\"session_id\");\r",
+              "    pm.expect(session_id).to.be.a('string').and.not.be.empty;\r",
               "});"
             ],
             "type": "text/javascript",
@@ -184,7 +195,24 @@
               "\r",
               "// Dynamically save the generated pet ID for use in later steps\r",
               "const json = pm.response.json();\r",
-              "pm.environment.set(\"pet_id\", json.id);"
+              "pm.environment.set(\"pet_id\", json.id);\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "//check if session_id remain set while calling an API that would require session id\r",
+              "pm.test(\"Session ID has been set\", () => {\r",
+              "    const session_id = pm.environment.get(\"session_id\");\r",
+              "    pm.expect(session_id).to.be.a('string').and.not.be.empty;\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -309,7 +337,9 @@
               "\r",
               "pm.test(\"Response time is acceptable\", () => {\r",
               "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-              "});"
+              "});\r",
+              "\r",
+              ""
             ],
             "type": "text/javascript",
             "packages": {},
@@ -325,13 +355,13 @@
           "type": "apikey",
           "apikey": [
             {
-              "key": "key",
-              "value": "api_key",
+              "key": "value",
+              "value": "{{api_key}}",
               "type": "string"
             },
             {
-              "key": "value",
-              "value": "{{apiKey}}",
+              "key": "key",
+              "value": "api_key",
               "type": "string"
             },
             {
@@ -929,7 +959,13 @@
               "    const json = pm.response.json();\r",
               "    pm.expect(json.message).to.eql(pm.environment.get(\"pet_id\").toString());\r",
               "});\r",
-              ""
+              "\r",
+              "\r",
+              "//check if session_id remains set\r",
+              "pm.test(\"Session ID has been set\", () => {\r",
+              "    const session_id = pm.environment.get(\"session_id\");\r",
+              "    pm.expect(session_id).to.be.a('string').and.not.be.empty;\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -1297,6 +1333,13 @@
               "\r",
               "pm.test(\"Response time is acceptable\", () => {\r",
               "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.environment.unset(\"session_id\");\r",
+              "\r",
+              "//check if session_id has been removed\r",
+              "pm.test(\"Session ID has been cleared\", () => {\r",
+              "    pm.expect(pm.environment.get(\"session_id\")).to.be.undefined;\r",
               "});"
             ],
             "type": "text/javascript",
